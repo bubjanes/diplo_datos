@@ -1,0 +1,4 @@
+artifact_location: file:///users/bjames/diplo_datos/deep_learning/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: Base model

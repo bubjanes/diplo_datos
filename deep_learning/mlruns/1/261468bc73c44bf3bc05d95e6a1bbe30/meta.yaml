@@ -1,0 +1,15 @@
+artifact_uri: file:///users/bjames/diplo_datos/deep_learning/mlruns/1/261468bc73c44bf3bc05d95e6a1bbe30/artifacts
+end_time: 1574694888995
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 261468bc73c44bf3bc05d95e6a1bbe30
+run_uuid: 261468bc73c44bf3bc05d95e6a1bbe30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1574694872561
+status: 3
+tags: []
+user_id: bjames
