@@ -43,7 +43,7 @@ Consigna: Trabajé con el conjunto de datos de petfinder para predecir la veloci
 - 3 - Pet was adopted between 31 and 90 days (2nd & 3rd month) after being listed.
 - 4 - No adoption after 100 days of being listed. (There are no pets in this dataset that waited between 90 and 100 days).
 
-Objectivos:
+**Objectivos**:
 
 1. Explorar la data y entenderla
 2. Entender la funcionamento básico de un clasificador de red neuronal
@@ -72,7 +72,7 @@ Probé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```
 
 Despueés probeé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como one-hot columns y me dio los siguientes resultados:
 
-Test loss: 1.519851915871919 - accuracy: 0.34671705961227417
+**Test loss: 1.519851915871919 - accuracy: 0.34671705961227417**
 
 Como se ve arriba, usando la configuración de one-hot vectors para mis nuevos features agregados me dió accuracy era 44 por ciento y el validation accuracy 35 por ciento una diferencia de casi 10 por ciento. Esto indica overfitting, que es un problema muy común cuando usas redes neuronales.
 
@@ -88,14 +88,14 @@ Las únicas métricas que usé en este proyecto era accuracy y validation accura
 - 2 numerical features: age, fee
 - 2 hidden layers (64 nodos, 20 nodos)
 - Softmax activation funcion
-- scaling con StandardScaler
-- ```Keras regularizers```
+- scaling with ```Sklearn StandardScaler```
+- regularize with ```Keras regularizers```
 
-Conclusion:
+Conclusión:
 Sobre todo estuve un poco decepcionado con mis resultados tratando de predecir el adoption speed. Después de probar varios configuraciones de parámetros y hyper parametros, lo encontré difícil generar resultados significamente mejor. 
 
 ## Pendiente para trabajos futuros:
 - Explorar variaciones en batch size
 - Probar otros activation functions
 - Usar redes recurrentes para analizar el texto de description 
-- usar diferentes metricas para evaluar mi
+- usar diferentes metricas para evaluar mi modelo
