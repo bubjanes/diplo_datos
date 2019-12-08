@@ -6,11 +6,17 @@
 Consigna: Trabajé con el conjunto de datos de petfinder para predecir la velocidad de adopción de un conjunto de mascotas. Para ello, también se dispone de [esta competencia de Kaggle](https://www.kaggle.com/c/diplodatos-deeplearning-2019). Se trata de una tarea de clasificación.
 
 **Data disponible**:
+
 train.csv 
+
 test.csv 
-sample_submission.csv - A sample submission file in the correct format para Kaggle
+
+submission.csv - A sample submission file in the correct format para Kaggle
+
 breed_labels.csv - type y breed name para cada breed ID; ID 1 es dog y 2 es cat
+
 color_labels.csv - decodificación de colors
+
 state_labels.csv - decodificación para cada state
 
 **test.csv y train.csv variables**
@@ -53,13 +59,11 @@ Objectivos:
 ## **¿Qué columnas afecta más el desempeño del clasificador?**
 
 ## Baseline trial:
-
-
 2 one-hot-encoded features: gender, color1
 1 embedded feature: breed1
 2 numerical features: age, fee
 batch size = 32
-One hidden layer, size = 64
+one hidden layer, size = 64
 
 Baseline resultados: **Test loss: 1.78 - accuracy: 0.27**
 
