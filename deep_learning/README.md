@@ -1,6 +1,6 @@
 # Aprendizaje Profundo|Diplomatura en ciencias de datos|UNC - FaMAF
 ## Brandon Janes
-## Profes: Cristian Cardellino y Milagro Teruel
+## Profesores: Cristian Cardellino y Milagro Teruel
 
 ## Práctico n°1
 Consigna: Trabajé con el conjunto de datos de petfinder para predecir la velocidad de adopción de un conjunto de mascotas. Para ello, también se dispone de [esta competencia de Kaggle](https://www.kaggle.com/c/diplodatos-deeplearning-2019). Se trata de una tarea de clasificación.
