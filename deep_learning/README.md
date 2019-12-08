@@ -7,17 +7,12 @@ Consigna: Trabajé con el conjunto de datos de petfinder para predecir la veloci
 
 **Data disponible**:
 
-train.csv 
-
-test.csv 
-
-submission.csv - A sample submission file in the correct format para Kaggle
-
-breed_labels.csv - type y breed name para cada breed ID; ID 1 es dog y 2 es cat
-
-color_labels.csv - decodificación de colors
-
-state_labels.csv - decodificación para cada state
+- train.csv 
+- test.csv 
+- submission.csv - A sample submission file in the correct format para Kaggle
+- breed_labels.csv - type y breed name para cada breed ID; ID 1 es dog y 2 es cat
+- color_labels.csv - decodificación de colors
+- state_labels.csv - decodificación para cada state
 
 **test.csv y train.csv variables**
 - PetID (PID) - Unique hash ID of pet profile
@@ -42,11 +37,11 @@ state_labels.csv - decodificación para cada state
 - State - State location in Malaysia (Refer to StateLabels dictionary)
 
 **AdoptionSpeed (target)**
-0 - Pet was adopted on the same day as it was listed.
-1 - Pet was adopted between 1 and 7 days (1st week) after being listed.
-2 - Pet was adopted between 8 and 30 days (1st month) after being listed.
-3 - Pet was adopted between 31 and 90 days (2nd & 3rd month) after being listed.
-4 - No adoption after 100 days of being listed. (There are no pets in this dataset that waited between 90 and 100 days).
+- 0 - Pet was adopted on the same day as it was listed.
+- 1 - Pet was adopted between 1 and 7 days (1st week) after being listed.
+- 2 - Pet was adopted between 8 and 30 days (1st month) after being listed.
+- 3 - Pet was adopted between 31 and 90 days (2nd & 3rd month) after being listed.
+- 4 - No adoption after 100 days of being listed. (There are no pets in this dataset that waited between 90 and 100 days).
 
 Objectivos:
 
@@ -59,11 +54,11 @@ Objectivos:
 ## **¿Qué columnas afecta más el desempeño del clasificador?**
 
 ## Baseline trial:
-2 one-hot-encoded features: gender, color1
-1 embedded feature: breed1
-2 numerical features: age, fee
-batch size = 32
-one hidden layer, size = 64
+- 2 one-hot-encoded features: gender, color1
+- 1 embedded feature: breed1
+- 2 numerical features: age, fee
+- batch size = 32
+- one hidden layer, size = 64
 
 Baseline resultados: **Test loss: 1.78 - accuracy: 0.27**
 
@@ -71,11 +66,11 @@ Baseline resultados: **Test loss: 1.78 - accuracy: 0.27**
 
 Después de probar la configuración baseline, fui agregando capas y experimentando agregando columnas para ver que configuracion me da el mejor accuracy. 
 
-Probé Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed y Sterilized como embedded columns y me dio los siguientes resultados:
+Probé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como embedded columns y me dio los siguientes resultados:
 
 **Test loss: 1.5414583665221484 - accuracy: 0.347661793231964**
 
-Despueés probeé Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed y Sterilized como one-hot columns y me dio los siguientes resultados:
+Despueés probeé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como one-hot columns y me dio los siguientes resultados:
 
 Test loss: 1.519851915871919 - accuracy: 0.34671705961227417
 
@@ -84,18 +79,18 @@ Como se ve arriba, usando la configuración de one-hot vectors para mis nuevos f
 Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_initializer=’RandomNormal’, kernal_regularizer=regularizers.I2(0.001),activity_regularizer=regularizer.I2(0.001)```.
 
 ## Final configuracion:
-30 epochs
-batch size = 32
-9 one-hot-encoded features: Gender, Color1, Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed, Sterilized
-1 embedded feature: breed1
-2 numerical features: age, fee
-2 hidden layers (64 nodos, 20 nodos)
-Softmax activation funcion
+- 30 epochs
+- batch size = 32
+- 9 one-hot-encoded features: Gender, Color1, Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed, Sterilized
+- 1 embedded feature: breed1
+- 2 numerical features: age, fee
+- 2 hidden layers (64 nodos, 20 nodos)
+- Softmax activation funcion
 
 Conclusion:
 Sobre todo estuve un poco decepcionado con mis resultados tratando de predecir el adoption speed. Después de probar varios configuraciones de parámetros y hyper parametros, lo encontré difícil generar resultados significamente mejor. 
 
 ## Pendiente para trabajos futuros:
-Explorar variaciones en batch size
-Probar otros activation functions
-Usar redes recurrentes para analizar el texto de description 
+- Explorar variaciones en batch size
+- Probar otros activation functions
+- Usar redes recurrentes para analizar el texto de description 
