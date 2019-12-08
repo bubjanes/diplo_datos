@@ -4,40 +4,43 @@
 
 ### Práctico n°1
 Consigna: Trabajé con el conjunto de datos de petfinder para predecir la velocidad de adopción de un conjunto de mascotas. Para ello, también se dispone de [esta competencia de Kaggle](https://www.kaggle.com/c/diplodatos-deeplearning-2019). Se trata de una tarea de clasificación.
-    **Data disponible**:
-    train.csv 
-    test.csv 
-    sample_submission.csv - A sample submission file in the correct format para Kaggle
-    breed_labels.csv - type y breed name para cada breed ID; ID 1 es dog y 2 es cat
-    color_labels.csv - decodificación de colors
-    state_labels.csv - decodificación para cada state
-    **test.csv y train.csv variables**
-    - PetID (PID) - Unique hash ID of pet profile
-    - AdoptionSpeed - Categorical speed of adoption. 
-    - Type - Type of animal (1 = Dog, 2 = Cat)
-    - Name - Name of pet (Empty if not named)
-    - Age - Age of pet when listed, in months
-    - Breed1 - Primary breed of pet (Refer to BreedLabels dictionary)
-    - Breed2 - Secondary breed of pet, if pet is of mixed breed (Refer to BreedLabels dictionary)
-    - Gender - Gender of pet (1 = Male, 2 = Female, 3 = Mixed, if profile represents group of pets)
-    - Color1 - Color 1 of pet (Refer to ColorLabels dictionary)
-    - Color2 - Color 2 of pet (Refer to ColorLabels dictionary)
-    - Color3 - Color 3 of pet (Refer to ColorLabels dictionary)
-    - MaturitySize - Size at maturity (1 = Small, 2 = Medium, 3 = Large, 4 = Extra Large, 0 = Not Specified)
-    - FurLength - Fur length (1 = Short, 2 = Medium, 3 = Long, 0 = Not Specified)
-    - Vaccinated - Pet has been vaccinated (1 = Yes, 2 = No, 3 = Not Sure)
-    - Dewormed - Pet has been dewormed (1 = Yes, 2 = No, 3 = Not Sure)
-    - Sterilized - Pet has been spayed / neutered (1 = Yes, 2 = No, 3 = Not Sure)
-    - Health - Health Condition (1 = Healthy, 2 = Minor Injury, 3 = Serious Injury, 0 = Not Specified)
-    - Quantity - Number of pets represented in profile
-    - Fee - Adoption fee (0 = Free)
-    - State - State location in Malaysia (Refer to StateLabels dictionary)
-    **AdoptionSpeed (target)**
-    0 - Pet was adopted on the same day as it was listed.
-    1 - Pet was adopted between 1 and 7 days (1st week) after being listed.
-    2 - Pet was adopted between 8 and 30 days (1st month) after being listed.
-    3 - Pet was adopted between 31 and 90 days (2nd & 3rd month) after being listed.
-    4 - No adoption after 100 days of being listed. (There are no pets in this dataset that waited between 90 and 100 days).
+
+**Data disponible**:
+train.csv 
+test.csv 
+sample_submission.csv - A sample submission file in the correct format para Kaggle
+breed_labels.csv - type y breed name para cada breed ID; ID 1 es dog y 2 es cat
+color_labels.csv - decodificación de colors
+state_labels.csv - decodificación para cada state
+
+**test.csv y train.csv variables**
+- PetID (PID) - Unique hash ID of pet profile
+- AdoptionSpeed - Categorical speed of adoption. 
+- Type - Type of animal (1 = Dog, 2 = Cat)
+- Name - Name of pet (Empty if not named)
+- Age - Age of pet when listed, in months
+- Breed1 - Primary breed of pet (Refer to BreedLabels dictionary)
+- Breed2 - Secondary breed of pet, if pet is of mixed breed (Refer to BreedLabels dictionary)
+- Gender - Gender of pet (1 = Male, 2 = Female, 3 = Mixed, if profile represents group of pets)
+- Color1 - Color 1 of pet (Refer to ColorLabels dictionary)
+- Color2 - Color 2 of pet (Refer to ColorLabels dictionary)
+- Color3 - Color 3 of pet (Refer to ColorLabels dictionary)
+- MaturitySize - Size at maturity (1 = Small, 2 = Medium, 3 = Large, 4 = Extra Large, 0 = Not Specified)
+- FurLength - Fur length (1 = Short, 2 = Medium, 3 = Long, 0 = Not Specified)
+- Vaccinated - Pet has been vaccinated (1 = Yes, 2 = No, 3 = Not Sure)
+- Dewormed - Pet has been dewormed (1 = Yes, 2 = No, 3 = Not Sure)
+- Sterilized - Pet has been spayed / neutered (1 = Yes, 2 = No, 3 = Not Sure)
+- Health - Health Condition (1 = Healthy, 2 = Minor Injury, 3 = Serious Injury, 0 = Not Specified)
+- Quantity - Number of pets represented in profile
+- Fee - Adoption fee (0 = Free)
+- State - State location in Malaysia (Refer to StateLabels dictionary)
+
+**AdoptionSpeed (target)**
+0 - Pet was adopted on the same day as it was listed.
+1 - Pet was adopted between 1 and 7 days (1st week) after being listed.
+2 - Pet was adopted between 8 and 30 days (1st month) after being listed.
+3 - Pet was adopted between 31 and 90 days (2nd & 3rd month) after being listed.
+4 - No adoption after 100 days of being listed. (There are no pets in this dataset that waited between 90 and 100 days).
 
 Objectivos:
 
@@ -47,7 +50,7 @@ Objectivos:
 4. Elegir el modelo (parámetros, hyperparameters...etc) que da el mejor accuracy en predecir el adoption speed de las mascotas. 
 5. Hacer un intento en la competición interno de Kaggle
 
-**¿Qué columnas afecta más el desempeño del clasificador?**
+## **¿Qué columnas afecta más el desempeño del clasificador?**
 
 ## Baseline trial:
 
