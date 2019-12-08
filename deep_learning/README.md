@@ -64,23 +64,23 @@ Baseline resultados: **Test loss: 1.78 - accuracy: 0.27**
 
 ## Experimentación con parámetros y hyper parámetros:
 
-Después de probar la configuración baseline, fui agregando capas y experimentando agregando columnas para ver que configuracion me da el mejor accuracy. 
+Después de probar la configuración baseline, fui agregando capas y experimentando agregando columnas para ver que configuración me da el mejor accuracy. 
 
 Probé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como embedded columns y me dio los siguientes resultados:
 
 **Test loss: 1.5414583665221484 - accuracy: 0.347661793231964**
 
-Despueés probeé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como one-hot columns y me dio los siguientes resultados:
+Después probé ```Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed``` y ```Sterilized``` como one-hot columns y me dio los siguientes resultados:
 
 **Test loss: 1.519851915871919 - accuracy: 0.34671705961227417**
 
 Como se ve arriba, usando la configuración de one-hot vectors para mis nuevos features agregados me dió accuracy era 44 por ciento y el validation accuracy 35 por ciento una diferencia de casi 10 por ciento. Esto indica overfitting, que es un problema muy común cuando usas redes neuronales.
 
-Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_regularizer=regularizers.I2(0.001),activity_regularizer=regularizer.I2(0.001)``` para optimizar los parametros de las capas ocultas. También agregué ```StandardScaler``` para poder introducir scaling para varianza. 
+Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_regularizer=regularizers.I2(0.001),activity_regularizer=regularizer.I2(0.001)``` para optimizar los parámetros de las capas ocultas. También agregué ```StandardScaler``` para poder introducir scaling para varianza. 
 
 Las únicas métricas que usé en este proyecto era accuracy y validation accuracy. 
 
-## Final configuracion:
+## Final configuración:
 - 30 epochs
 - batch size = 32
 - 9 one-hot-encoded features: Gender, Color1, Breed2, Vaccinated, Health, MaturitySize, FurLength, Dewormed, Sterilized
@@ -91,7 +91,7 @@ Las únicas métricas que usé en este proyecto era accuracy y validation accura
 - scaling with ```Sklearn StandardScaler```
 - regularize with ```Keras regularizers```
 
-Conclusión:
+**Conclusión:**
 Sobre todo estuve un poco decepcionado con mis resultados tratando de predecir el adoption speed. Después de probar varios configuraciones de parámetros y hyper parametros, lo encontré difícil generar resultados significamente mejor. 
 
 ## Pendiente para trabajos futuros:
