@@ -1,8 +1,8 @@
 # Aprendizaje Profundo|Diplomatura en ciencias de datos|UNC - FaMAF
-### Brandon Janes
-### Profes: Cristian Cardellino y Milagro Teruel
+## Brandon Janes
+## Profes: Cristian Cardellino y Milagro Teruel
 
-### Práctico n°1
+## Práctico n°1
 Consigna: Trabajé con el conjunto de datos de petfinder para predecir la velocidad de adopción de un conjunto de mascotas. Para ello, también se dispone de [esta competencia de Kaggle](https://www.kaggle.com/c/diplodatos-deeplearning-2019). Se trata de una tarea de clasificación.
 
 **Data disponible**:
@@ -76,7 +76,9 @@ Test loss: 1.519851915871919 - accuracy: 0.34671705961227417
 
 Como se ve arriba, usando la configuración de one-hot vectors para mis nuevos features agregados me dió accuracy era 44 por ciento y el validation accuracy 35 por ciento una diferencia de casi 10 por ciento. Esto indica overfitting, que es un problema muy común cuando usas redes neuronales.
 
-Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_initializer=’RandomNormal’, kernal_regularizer=regularizers.I2(0.001),activity_regularizer=regularizer.I2(0.001)```.
+Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_regularizer=regularizers.I2(0.001),activity_regularizer=regularizer.I2(0.001)``` para optimizar los parametros de las capas ocultas. También agregué ```StandardScaler``` para poder introducir scaling para varianza. 
+
+Las únicas métricas que usé en este proyecto era accuracy y validation accuracy. 
 
 ## Final configuracion:
 - 30 epochs
@@ -86,6 +88,8 @@ Despues agregé una capa oculta adicional de 20 nodos y hice ```kernal_initializ
 - 2 numerical features: age, fee
 - 2 hidden layers (64 nodos, 20 nodos)
 - Softmax activation funcion
+- scaling con StandardScaler
+- ```Keras regularizers```
 
 Conclusion:
 Sobre todo estuve un poco decepcionado con mis resultados tratando de predecir el adoption speed. Después de probar varios configuraciones de parámetros y hyper parametros, lo encontré difícil generar resultados significamente mejor. 
@@ -94,3 +98,4 @@ Sobre todo estuve un poco decepcionado con mis resultados tratando de predecir e
 - Explorar variaciones en batch size
 - Probar otros activation functions
 - Usar redes recurrentes para analizar el texto de description 
+- usar diferentes metricas para evaluar mi
